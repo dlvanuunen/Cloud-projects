@@ -87,3 +87,24 @@ volumes:
   superset-db-data:
   superset-redis-data:
   warehouse-db-data:
+
+# Potential init to create superset reader role to acces warehouse on a non-admin role
+  # warehouse-db-init:
+  # image: postgres:18
+  # depends_on:
+  #   warehouse-db:
+  #     condition: service_healthy
+  # environment:
+  #   PGPASSWORD: ${WAREHOUSE_PASSWORD}
+  # command: >
+  #   bash -c "
+  #     psql -h warehouse-db -U warehouse -d warehouse -v ON_ERROR_STOP=1
+  #     -c \"DO \$\$ BEGIN
+  #           IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'superset_reader') THEN
+  #             CREATE ROLE superset_reader LOGIN PASSWORD '${SUPERSET_DB_PASSWORD}';
+  #           END IF;
+  #         END \$\$;\"
+  #     -c \"GRANT CONNECT ON DATABASE warehouse TO superset_reader;\"
+  #     -c \"GRANT USAGE ON SCHEMA public TO superset_reader;\"
+  #     -c \"GRANT SELECT ON ALL TABLES IN SCHEMA public TO superset_reader;\"
+  #   "

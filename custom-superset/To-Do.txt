@@ -1,0 +1,10 @@
+- Recheck warehouse db connection after docker compose up
+- Implement basic security measures
+- Write new docker container with python script -> Collect data trough api and populate warehouse-db
+- Implement docker compose internal network related security measures
+
+
+
+
+Later:
+- Implement server related security measures, HTTPS etc.
