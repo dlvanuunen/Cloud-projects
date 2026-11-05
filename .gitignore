@@ -1,13 +1,17 @@
+
+### My repo specific ###
+/Tests
+
+
+
+
+
+### Common ###
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
-
-
-
-
-#
-docker/.env-local
 
 
 # C extensions
@@ -119,9 +123,9 @@ ipython_config.py
 #   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
 # pdm.lock
 # pdm.toml
+
 .pdm-python
 .pdm-build/
-
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
 # pixi.lock
@@ -153,6 +157,7 @@ activemq-data/
 *.sage.py
 
 # Environments
+docker/.env-local
 .env
 .envrc
 .venv

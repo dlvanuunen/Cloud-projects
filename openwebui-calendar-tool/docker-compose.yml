@@ -1,0 +1,19 @@
+services:
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.12.5
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+    volumes:
+      - open-webui-data:/app/backend/data
+    # depends_on:
+    #   ollama-model-loader:
+    #     condition: service_completed_successfully
+    restart: unless-stopped
+
+volumes:
+  open-webui-data:
+    external: true
+

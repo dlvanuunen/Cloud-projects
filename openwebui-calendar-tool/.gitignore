@@ -1,0 +1,11 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# virtual environment
+.ca-env/
+
+# python junk
+__pycache__/
+*.pyc
