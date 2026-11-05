@@ -12,13 +12,9 @@ Skills learned:
 ## 📂 Projects
 
 - Project 1 – **Superset + PostgreSQL Docker Stack**
-  A minimal proof of concept that runs **Apache Superset** alongside a **PostgreSQL** data warehouse using **Docker Compose**.
-  - Lean Superset image
-  - Warehouse database connected from within the compose file
-  - Scope kept small on purpose: confirm the stack builds and the two services can talk to each other
-
+  A minimal proof of concept that runs **Apache Superset** alongside a **PostgreSQL** data warehouse using **Docker Compose** and a lean Superset image.
+ 
 - Project 2 – **Calendar Tool Server for Open WebUI**
   A **FastAPI** service that works as an external tool for **Open WebUI** and reads events from a **CalDAV** calendar on a mail provider.
   - Exposes simple endpoints (e.g. "get events for a date range") that the agent can call
-  - Credentials are stored server-side in environment variables, so the agent never sees passwords or tokens
-  - Returns only the calendar data the agent needs, in clean JSON
+
